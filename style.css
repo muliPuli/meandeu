@@ -167,3 +167,14 @@ footer {
 footer div {
     margin: 0 auto;
 }
+
+@media(max-width: 500px) {
+    header {
+        font-size: 12px;
+    }
+    header #header-title {
+
+        font-size: 23px;
+
+    }
+}
