@@ -1,180 +1,196 @@
 
-@font-face {
-    font-family: Tesla;
-    src: url(TESLA.ttf);
+:root {
+    --blue1:#8ecae6;
+ --blue3:#219ebc;
+ --blue2:#003399;
+--yellow: #ffb703;
+--orange: #fb8500;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 25px;
-}
-a {
-    text-decoration: none;
-}
 
-/*HEADER*/
+
+
+
+body {
+    color: var(--blue2);
+   /* color: #ffcc00;*/
+   margin: 0 0;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 header {
-    display: inline-block;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    height: 80px;
-    background: #fff;
-    z-index: 100;
-    box-shadow: 0px 0px 20px 5px #666668;
-}
-header #header-title {
-    display: inline-block;
-    position: relative;
-    width: 49%;
-    left: 0px;
-    font-family: Tesla;
-    color: #e82127;
+    display: block;
+    position:fixed;
+    top:0;
+    left:0;
+    text-align: center;
     font-size: 30px;
-    padding-left: 20px;
-    text-align: left;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 0px 20px 5px #aaa;
+    background-color: #fff;
+    z-index: 100;
+    color: #fff;
+    background-color: #fff;
+
 }
-header div {
-    display: inline-block;
-    width: 49%;
-    text-align: center;
+header {
+    font-size: 40px;
 }
-header #header-buttons {
-    display: inline-block;
+
+.tabs {
+    display: none;
+    width: 100%;
     height: 100%;
-    position: relative;
-    top:-25px;
+    margin-top: 80px;
+    padding-left: 4%;
+    padding-right: 4%;
+    background:
+}
+.tabs>h1 {
+    font-size:50px;
 }
 
-header #header-buttons a div{
-    display: inline-block;
-    position: relative;
-    font-family: Tesla;
-    top: 0px;
-    width: 32%;
-    height: 66%;
-    text-align: center;
-    border: 1px solid grey;
-    border-radius: 10%;
-    font-size: 20px;
-    text-decoration: none;
-    color: #666668;
-}
-#header-buttons div:hover{
-    color: #e82127;
-    border: 3px solid #e82127;
-    cursor: pointer;
-    transition: all 0.5s;
-}
-#picture-section {
-    box-shadow: 0px 0px 100px 100px grey inset;
-    background-color: transparent;
-    z-index: 10;
-}
-#picture-section img{
-    z-index: 1;
-    position: relative;
-    top: 50px;
-}
-    /* MAIN */
-
-main {
-    display: inline-block;
-    position: relative;
-    margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-main .sections {
-    display: block;
-    position: relative;
+.tabs>div {
     width: 100%;
-    margin: 0 auto;
     height: auto;
-    padding-bottom: 100px;
-    padding-top: 70px;
-    text-align: center;
-}
-main .section h1 {
-    display: block;
-    position: relative;
-    width: 86%;
-    margin: 0 auto;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px #ccc;
+    margin-top: 10px;
+    padding: 4%;
 
 }
-main .sections h1::after {
-    display: block;
-    position: relative;
-    top: 0px;
-    content: "";
-    width: 10%;
-    height: 10px;
-    background: #e82127;
+.tabs div p{
+
+    margin: 20px 0;
 }
 
-main #intro-section .text-section h1 {
-    color: #fff;
+.tabs>div>div {
+    padding: 4%;
+}
+
+#leaderboard>div>div {
+    padding-bottom: 20px;
+}
+
+.tabs>div>h2 {
+    padding: 0 4%;
 }
 
 
-main #intro-section h1::after {
-    background: #000;
+
+.tabs div:nth-child(2n){
+    background-color: var(--yellow);
 }
 
-main #intro-section {
-    background-color: #e82127;
-    color: #fff;
-}
-main #intro-section .text-section{
-
-    color: #fff;
+.tabs div:nth-child(2n) button{
+    background-color: var(--blue2);
+    color: var(--yellow);
+    
 }
 
- main .text-section {
-     display: inline-block;
-     position: relative;
-     width: 66%;
-     margin: 0 auto;
-     text-align: left;
-     color: #666668;
- }
+.tabs div:nth-child(2n + 1) button{
+    background-color: var(--blue2);
+    color: var(--yellow);
 
- main .text-section h1 {
-margin-bottom: 20px;
-color: #000;
 }
 
-main #future-section {
-    background-color: #000;
-    color: #fff;
+/*
+#eventContainerMain div>:nth-child(2n){
+    background-color: var(--yellow);
 }
-main #future-section h1{
-    background-color: #000;
-    color: #fff;
-}
-
-/*FOOTER*/
-footer {
-    display: inline-block;
-    background-color: #666668;
-    height: auto;
-    width: 100%;
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 10px 0;
-}
-footer div {
-    margin: 0 auto;
-}
-
-@media(max-width: 500px) {
-    header {
-        font-size: 12px;
+#eventContainerMain div:nth-child(2n + 1){
+    background-color: var(--blue2);
     }
-    header #header-title {
+*/
+.tabs{
+    padding-bottom: 150px;
+}
 
-        font-size: 23px;
 
+.tabs #poster {
+    display:block;position:relative;height:190px;margin:0 auto;
+    border-radius:10px;
+    box-shadow: none;
+
+}
+
+.tabs img {
+    display:block;position:relative;height:190px;margin:0 auto;
+    border-radius:10px;
+    box-shadow: 0px 0px 10px 1px #ccc;
+    margin:100px 10px;
+}
+
+.tabs div h2::after {
+    content: "";
+    display: block;
+    width: 20%;
+    height: 5px;
+    background: var(--blue2);
+}
+
+main button {
+    display: block;
+    width: 100%;
+    margin: auto 0;
+    background: var(--yellow);
+    border-radius: 10px;
+    border: none;
+    height: 50px;
+    margin-top: 10px;
+}
+
+
+
+button#writeSuggestion {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 65px;
+    background: var(--blue2);
+    color: #fff;
+}
+
+
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    z-index: 100;
+}
+
+#buttons button {
+    flex: 1 1;
+    flex-basis: 20%;
+    border: none;
+    background: var(--blue2);
+    outline: none;
+    color: var(--blue3);
+    transition: 0.2s linear all;
+    margin: 0 0;
+
+}
+
+#button button:active {
+    background:var(--blue2);
+}
+
+
+#buttons button:nth-child(3) {
+    height: 70px;
+    border-radius: 30px 30px 0px 0px;
+}
+
+@media (max-width: 350px) {
+    #buttons button {
+        font-size: 14px;
     }
 }

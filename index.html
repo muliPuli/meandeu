@@ -2,78 +2,205 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport"
+        content="width=device-width, height=device-height, viewport-fit=cover, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>ME&EU</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <title>TesGo Self-driving car</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+
+
+
 </head>
 
 <body>
-    <header>
-        <div id="header-title" tabindex="0">
-            <h1>TESGO</h1>
-        </div>
-        <div id="header-buttons" tabindex="0">
-            <a href="#intro-section">
-                <div id="intro" tabindex="0">Intro</div>
-            </a>
-            <a href="#details-section">
-                <div id="details" tabindex="0">Details</div>
-            </a>
-            <a href="#future-section">
-                <div id="details" tabindex="0">Future</div>
-            </a>
-        </div>
-    </header>
-    <div id="picture-section" class="sections" tabindex="0">
+    <header><img src="logo_small.png" alt="" style="display:block;position:relative;height:60px;margin:0 auto"></header>
 
-        <img src="tesgo-main.jpg" alt="">
-    </div>
-    <main>
-        <div id="intro-section" class="sections">
-            <div class="text-section" id="intro-text" tabindex="0">
-                <h1>Introduction</h1>
-                Hi, I am Milan, the creator of the <b>TESGO project</b>. <br>
-                The whole idea was to make a model car with self-driving capabilities from items that are widely
-                available for
-                teenage boys at home. The only necessity is the <i>Mindstorms EV3</i>, a <i>computer with WI-FI</i> and
-                a <i>smartphone</i>.
-                My model is a bit more complex, but it is only because I wanted to make it more portable. <br>
-                The project itself took about 3 months to finish. <br>
-                Most of the time was taken up by planning and researching, while the actual building and programming
-                part accounted for only 25% of the time.
+    <main id="dashboard" class="tabs">
+
+        <h1>Welcome, <br>
+            Daniela!</h1>
+        <img src="poster.png" alt="" id="poster">
+        <div id="my-stats">
+            <h2>My stats <i class="fas fa-poll"></i></h2>
+
+            <p><i class="fas fa-podcast"></i> : 217000
+                <br><i class="fas fa-handshake"></i> : 44700 <br>
+                <i class="fas fa-signature"></i> : 2021 <br>
+            </p>
+            <button onclick=""><i class="fas fa-users"></i> My Community</button>
+            <button onclick=""><i class="fas fa-trophy"></i> Leaderboard</button>
+        </div>
+        <div id="events">
+            <h2>My Upcoming Events <i class="fas fa-calendar-week"></i></h2>
+            <div id="eventContainer">
+
             </div>
         </div>
-        <div id="details-section" class="sections">
-            <div class="text-section" id="details-text" tabindex="0">
-                <h1>Details</h1>
-                The car houses several individual 'blocks' that communinicate with each other over a WI-FI router.
-                The <b>brain</b> of the car is a <i style="color:crimson">Raspberry PI</i>, that deals with <b>object
-                    detection</b> and
-                <b>steering prediction</b> from the input array of images, using <b
-                    style="color:orangered">Tensorflow</b>.
-                The <b>images</b> are received from the server hosted by my <i style="color:darkcyan;">smartphone</i>.
-                The <b>outputs of the Neural Networks</b> are then sent over to the <i style="color:red">EV3</i>, that
-                acts according to
-                them.
-            </div>
+        <div id="intro-whatIsEu">
+            <h2>Understand the EU! <i class="fas fa-globe-europe"></i></h2>
+            <p>Why is it good for You?</p>
+            <p>How can you get involved?</p>
+            <button onclick="switchTabs(4)">Learn More!</button>
         </div>
-        <div id="future-section" class="sections">
-            <div class="text-section" id="details-text" tabindex="0">
-                <h1>Future</h1>
-                Using an <b style="color:lightskyblue">ultra-wide angle</b> camera for better steering performance.<br>
-                Implementing <b>face-unlock</b> with the use of an <b style="color:green">XBOX Kinect sensor</b>.
-            </div>
+        <div id="intro-digitalisation">
+            <h2>Digitalise <i class="fas fa-gamepad"></i> </h2>
+            <p>Why is it happening?</p>
+            <p>Is it bad for our society?</p>
+            <p>Everyone is misinformed?</p>
+            <button onclick="switchTabs(3)">Learn More!</button>
+        </div>
+
+
+        <div id="intro-getInvolved">
+            <h2>ME&EU Forums <i class="fas fa-hands"></i></h2>
+            <p>Do you want to be heard?</p>
+            <p></p>
+            <button onclick="switchTabs(2)"><i class="far fa-comments"></i> Discuss! </button>
+
+        </div>
+    </main>
+    <main id="events" class="tabs">
+        <h1>Events & <br>
+            Opportunities</h1>
+        <p><br>Here you can find EU Youth related events,working opportunities and much more!<br></p>
+        <p></p>
+        <div id="eventContainerMain">
+
+        </div>
+    </main>
+
+
+    <main id="getInvolved" class="tabs">
+        <p>Choose an option:</p>
+        <button style="display:inline-block;width:49%" class="petition_button" onclick="switchTabs(2)"><i
+                class="fas fa-signature"></i> Petitions</button>
+        <button style="display:inline-block;width: 49%" id="leaderboard_button" onclick="switchTabs(5)"><i
+                class="fas fa-trophy"></i> Leaderboard</button>
+        <h1>Tell Us <br> & Everyone!</h1>
+        <div id="suggestionContainer">
+
+        </div>
+        <div class="typeform-widget" data-url="https://form.typeform.com/to/YStQPFFt?typeform-medium=embed-snippet"
+            style="width: 100%; height: 500px;"></div>
+        <script> (function () { var qs, js, q, s, d = document, gi = d.getElementById, ce = d.createElement, gt = d.getElementsByTagName, id = "typef_orm", b = "https://embed.typeform.com/"; if (!gi.call(d, id)) { js = ce.call(d, "script"); js.id = id; js.src = b + "embed.js"; q = gt.call(d, "script")[0]; q.parentNode.insertBefore(js, q) } })() </script>
+        <button onclick="" id="writeSuggestion">Submit a suggestion</button>
+    </main>
+
+    <main id="whatIsEu" class="tabs">
+
+        <h1>What is the EU?</h1>
+        <img src="eu_flag.png" alt="">
+        <div>
+            <p>The EU is a complicated political and economic union, so a lot of citizens do not know how it affects
+                them. Fear no more, we’ll help you understand the most important ways the EU changes our daily lives!
+            </p>
+        </div>
+
+        <h2><br>How the EU impacts Us?</br></h2>
+        <div>
+            <h2>Laws</h2>
+            <p>The EU is able to create laws that are valid in all of the 27 member states. These laws are created in a
+                democratic way because the people that approve of the laws are directly elected by us, the citizens!</p>
+            <button onclick="">Start Game</button>
+        </div>
+        <div>
+            <h2>Programs</h2>
+            <p>There are plenty of projects that are funded by the EU with a goal to improve our lives! One example is
+                the Erasmus+ program, which gives the opportunity to students across Europe to study in another country!
+            </p>
+            <button onclick="">Start Game</button>
+        </div>
+        <div>
+            <h2>Infrastructure</h2>
+            <p> There are a lot of infrastructure projects that are funded by the EU to make the lives of European
+                citizens easier! These projects can be bridges, schools, roads etc (These are normally marked with signs
+                that show the EU flag).</p>
+            <button onclick="">Start Game</button>
+        </div>
+        <div>
+            <h2>Movement</h2>
+            <p>Due to the EU , there is an area in which you can travel from one European country to another without a
+                passport, just by using your ID card! Not only that, but if you are an EU citizen you can live and work
+                in any country that is part of that area! That area is called the Schengen area!</p>
+            <button onclick="">Start Game</button>
+        </div>
+
+        <h1>
+            Digitalisation <p>&it's threats</p>
+        </h1>
+        <img src="digital_poster.png" alt="">
+        <div>Digital technology is changing people’s lives. The EU’s digital strategy aims to make this transformation
+            work for people and businesses.</div>
+    </main>
+
+
+    <main id="settings" class="tabs">
+        <h1>Settings <i class="fas fa-cogs"></i></h1>
+        <button>Personal Details</button>
+        <button>Stats</button>
+        <button>Accounts</button>
+        <button>Log Out</button>
+        <h2><i class="fas fa-comment-dots"></i> Let Us Improve!</h2>
+        <p>Pleae give us feedback in a (fun) way!</p>
+        <button>Feedback</button>
+    </main>
+
+    <main id="leaderboard" class="tabs">
+        <p>Choose an option:</p>
+        <button style="display:inline-block;width:49%" class="petition_button" onclick="switchTabs(2)"><i
+                class="fas fa-signature"></i> Petitions</button>
+        <button style="display:inline-block;width: 49%" id="leaderboard_button" onclick="switchTabs(5)"><i
+                class="fas fa-trophy"></i> Leaderboard</button>
+        <h1>Leaderboard <i class="fas fa-trophy"></i></h1>
+        <div id="leaderBoardContainerMain">
+
+        </div>
 
     </main>
-    <footer>
-        <div>
-            <i>Milan Paczai</i> <br>
-            <b style="color:#e82127">Note: This is a personal project.</b>
-        </div>
 
-    </footer>
+
+
+
+
+
+    <div id="buttons">
+        <button onclick="switchTabs(0)"><i class="fas fa-male"></i><br>Me</button>
+        <button onclick="switchTabs(1)"><i class="fas fa-calendar-week"></i><br>Hub</button>
+        <button onclick="switchTabs(2)"><i class="fas fa-hands"></i> <br>ME&EU</button>
+        <button onclick="switchTabs(3)"><i class="fas fa-building"></i><br>EU</button>
+        <button onclick="switchTabs(4)"><i class="fas fa-cogs" style="font-size:23px;"></i> <br></button>
+
+
+    </div>
+
+
+
+
+    <div id="testing" style="display:none;">
+        <form action="">
+            <input type="text" name="input1" id="input1">
+            <input type="text" name="input2" id="input2">
+            <button type="submit"></button>
+        </form>
+    </div>
+    </main>
 </body>
+<script type="text/babel" src="javascript.js"></script>
 
 </html>
